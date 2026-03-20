@@ -143,7 +143,7 @@ function soWrite(conn: TCPConn, data: Buffer): Promise<void> {
       return;
     }
 
-    conn.socket.write(data, (err?: Error) => {
+    conn.socket.write(data, (err?: Error | null) => {
       if (err)
         reject(err);
       else
